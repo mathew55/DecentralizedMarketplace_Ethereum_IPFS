@@ -34,4 +34,11 @@ contract EcommerceStore{
         product.condition,product.buyer);
     }
     
+    function buy(uint _productId) payable public{
+        Product memory product = stores[productIdInStore[_productId]][_productId];
+        require(product.buyer == address(0));
+        require(msg.value >= product.price);
+        product.buyer == msg.sender;
+        stores[productIdInStore[_productId]][_productId] = product;
+    }
 }
