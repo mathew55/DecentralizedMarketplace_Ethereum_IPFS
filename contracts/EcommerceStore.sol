@@ -1,4 +1,5 @@
 pragma solidity ^0.4.23;
+import "contracts/Escrow.sol";
 // Basic Contract
 // Declares the store variables
 contract EcommerceStore{
@@ -7,6 +8,8 @@ contract EcommerceStore{
     uint public productIndex;
     mapping(address => mapping(uint => Product)) stores ; //can be used to get mapping of user to products
     mapping(uint => address) productIdInStore; // mapping from product to address
+    mapping(uint => address) productEscrow;
+    address public arbiter;
     struct Product{     // Defining our product
         uint id;
         string name;
@@ -18,8 +21,9 @@ contract EcommerceStore{
         ProductCondition condition;
         address buyer;
     }
-    constructor() public{
+    constructor(address _arbiter) public{
         productIndex = 0;
+        arbiter = _arbiter;
     }
     function addProductToStore(string _name,string _category,string _imageLink,string _descLink,uint _startTime,uint _price,uint _productConditon){
         productIndex += 1;
@@ -40,5 +44,19 @@ contract EcommerceStore{
         require(msg.value >= product.price);
         product.buyer == msg.sender;
         stores[productIdInStore[_productId]][_productId] = product;
+
+        Escrow escrow = (new Escrow).value(msg.value)(_productId,msg.sender,productIdInStore[_productId],arbiter);
+
+        productEscrow[_productId] = escrow;
+
+    }
+    function escrowInfor(uint _productId) view public returns (address, address,address,bool,uint,uint){
+    	return Escrow(productEscrow[_productId]).escrowInfo();
+    }
+    function releaseAmountToSeller(uint _productId) public{
+    	Escrow(productEscrow[_productId]).releaseAmountToSeller(msg.sender);
+    }
+    function releaseAmountToBuyer(uint _productId) public{
+    	Escrow(productEscrow[_productId]).refundAmountToBuyer(msg.sender);
     }
 }
