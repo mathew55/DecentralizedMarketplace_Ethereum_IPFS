@@ -27,4 +27,4 @@ EcommerceStore.deployed().then(function(f) {f.releaseAmountToSeller(1, {from :we
 (8) 0xf84b2c39ad30878cb2721dbaaba08e155eed5fd9c327ce8ed9ad576a49e7025e
 (9) 0x2170f4edd32422165550938d541f3606eea9f06a99e26d91461bf7ec662475b4
 
-awful fold web before tank festival glue elite element valve mix endorse
+march coach beyond diary mutual identify casino undo increase chicken suggest camp
