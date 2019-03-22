@@ -1,11 +1,11 @@
 //Add a product
-EcommerceStore.deployed().then(function(f){f.addProductToStore('iphone XS','phones','imageLink','descLink',1547734638,web3.toWei(1,'ether'),0).then(function(f){console.log(f)})})
+EcommerceStore.deployed().then(function(f){f.addProductToStore('iphone XS','phones','QmPBiKCC9EhQiUUxJgNJHG1NqFDG7BSbia3SVtYGC76ahB','descLink',1547734638,web3.toWei(1,'ether'),0).then(function(f){console.log(f)})})
 //Get the number of products
 EcommerceStore.deployed().then(function(f){f.productIndex.call().then(function(f){console.log(f)})})
 //Get the details of a particular product
 EcommerceStore.deployed().then(function(f){f.getProduct.call(1).then(function(f){console.log(f)})})
 //Buy Product
-EcommerceStore.deployed().then(function(f){f.buy(1, {value: web3.toWei(1, 'ether'),from : web3.eth.accounts[1]}).then(function(f){console.log(f)})})
+EcommerceStore.deployed().then(function(f){f.buy(1, {value: web3.toWei(2, 'ether'),from : web3.eth.accounts[0]}).then(function(f){console.log(f)})})
 //get balance of a particular account
 web3.eth.getBalance(web3.eth.accounts[1])
 //Get Escrow Details
@@ -16,15 +16,17 @@ to get all the accounts
 EcommerceStore.deployed().then(function(f) {f.releaseAmountToSeller(1, {from :web3.eth.accounts[1]}).then(function(f){console.log(f)})})
 
 
-(0) 0xea6e1fc53ffe5b8d8310f4a4f212c520d29ae393e0124e2b79774adb8d369542
-(1) 0x49d6debbb1033b3da8ac967177b63c6f0467863cff7904a838c8ed898a26fc5e
-(2) 0xf27e2f01aa600b7fa6e400984a09a610e869b60c6631e929cacb3c2b3bd26e03
-(3) 0x606b1b024f9628186161db4ab062310ff35c407939e4f3ad6a61a010d30f9084
-(4) 0x5b810d978cbfc63355476f7dde918af4abe5325571c1a1e1c7621abbea4b478a
-(5) 0xed4d872dea3100f049af2cb3e75ed93a802c788556395d160c2bb24cf6907781
-(6) 0xbcb5d21f97cb5bfc337036500d43f27a9b9b2e58e1a621ea9c7bb7e148320888
-(7) 0xa344ce5e8e4a251992650ba9c44d1bec6af16ebc3a7bc4656b0d133872ce1f93
-(8) 0xf84b2c39ad30878cb2721dbaaba08e155eed5fd9c327ce8ed9ad576a49e7025e
-(9) 0x2170f4edd32422165550938d541f3606eea9f06a99e26d91461bf7ec662475b4
 
+0x5023c065199e46be03ae354b0289511fe764630af3e57dd101f866d64ea66cc8
+(1) 0xbcca7727d705ff303c9ac50f4d6c63b7193b98f478a18d6de732415687012e89
+(2) 0x79fdcacd4b9c2671eff4893d060a8a1144c95e78fd0fa7961c7dd25f0689fb5b
+(3) 0x4b3a2f99699be3bf28d2a9d56fcc51b7701ef017fc56cfa2041fed8af394bccd
+(4) 0x58d42e9385274a97c1a0b896e69de9c65e26d5f325c2ddf350b3f25e5f5e5446
+(5) 0x51484fd524a7dd47d66b289e76b120758732267edb8bc30c12cc72b0cb3c83b3
+(6) 0x542b3d47de25f771e66f682d945683c7fa546835289dacd87c1f285fa3900822
+(7) 0x0e1a20f6071f6b27eb6888234fed2cd602438cb67393fdd6bc4bfd62d2501064
+(8) 0x0bc755ab6cd96893788a03d3ff5b2f20a660e19d832a26d63298d19859121578
+(9) 0x71b65e1623468b7108ce8a4777d03e4b9d38b4f0501dbc00802a94b6bc2bb4f8
 march coach beyond diary mutual identify casino undo increase chicken suggest camp
+#ipfs iphone hash
+QmPBiKCC9EhQiUUxJgNJHG1NqFDG7BSbia3SVtYGC76ahB
