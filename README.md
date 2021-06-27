@@ -1,4 +1,4 @@
-# DecentralizedMarketplace_Ethereum_IPFS
+# Decentralized Marketplace Using Ethereum & IPFS
 The Decentralized marketplace is an application built on top of the Ethereum & Interplanetary File System (IPFS) to create a new decentralized, peer-to-peer platform that aims to bring together buyers and sellers under one umbrella.
 
 #Features:
